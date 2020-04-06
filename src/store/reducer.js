@@ -13,6 +13,26 @@ export default function Reducer(state = initialState, action) {
 			};
 			return { ...state, todoList: [...state.todoList, newTodo] };
 		}
+		case "DELETE_TODO": {
+			return {
+				...state,
+				todoList: state.todoList.filter(
+					(todo) => todo.id !== action.payload
+				),
+			};
+		}
+		case "TOGGLE_TODO": {
+			return {
+				...state,
+				todoList: state.todoList.map((todo) => {
+					if (todo.id === action.payload) {
+						return { ...todo, isDone: !todo.isDone };
+					}
+					return todo;
+				}),
+			};
+		}
+
 		default:
 			return state;
 	}

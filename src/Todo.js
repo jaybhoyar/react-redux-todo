@@ -4,13 +4,12 @@ import { deleteTodoAction, toggleTodoAction } from "./store/action";
 
 function Todo(props) {
 	const handleDelete = (id) => {
-		// dispatch
 		props.dispatch(deleteTodoAction(id));
 	};
 
-	// const toggleTodo = (id) => {
-	// 	props.dispatch(toggleTodoAction(id));
-	// };
+	const toggleTodo = (id) => {
+		props.dispatch(toggleTodoAction(id));
+	};
 	return (
 		<>
 			<ul>
@@ -19,11 +18,16 @@ function Todo(props) {
 						<li key={todo.id} className="li_styles">
 							<input
 								type="checkbox"
-								// onChange={() => toggleTodo(todo.id)}
+								onChange={() => toggleTodo(todo.id)}
 								checked={todo.isDone}
 							/>
-							<p>{todo.text}</p>
-							<span onClick={() => handleDelete(todo.id)}>X</span>
+							<p className="para">{todo.text}</p>
+							<span
+								className="remove_items"
+								onClick={() => handleDelete(todo.id)}
+							>
+								x
+							</span>
 						</li>
 					);
 				})}
