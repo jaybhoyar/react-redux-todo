@@ -45,6 +45,27 @@ export default function Reducer(state = initialState, action) {
 				todoList: state.todoList.filter((todo) => !todo.isDone),
 			};
 		}
+		case "TOGGLE_ALL": {
+			var newTodos = [];
+			if (
+				state.todoList.filter((todo) => todo.isDone).length ==
+				state.todoList.length
+			) {
+				newTodos = state.todoList.map((todo) => {
+					todo.isDone = false;
+					return todo;
+				});
+			} else {
+				newTodos = state.todoList.map((todo) => {
+					todo.isDone = true;
+					return todo;
+				});
+			}
+			return {
+				...state,
+				todoList: newTodos,
+			};
+		}
 		default:
 			return state;
 	}

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Todo from "./Todo";
 import Footer from "./Footer";
 
-import { addTodoAction } from "./store/action";
+import { addTodoAction, toggleAllAction } from "./store/action";
 
 function mapStateToProps(state) {
 	return { todoList: state.todoList };
@@ -19,9 +19,11 @@ class App extends Component {
 	handleAddTodo = ({ target }) => {
 		this.setState({ todoInput: target.value });
 	};
+	handleToggleAll = () => {
+		this.props.dispatch(toggleAllAction());
+	};
 	addTodo = () => {
 		this.props.dispatch(addTodoAction(this.state.todoInput));
-		// add out todo to redux store
 		this.setState({ todoInput: "" });
 	};
 	render() {
@@ -31,7 +33,12 @@ class App extends Component {
 					<h1>todos</h1>
 					<div className="header">
 						<div className="flex">
-							<div className="toggle_img_container"></div>
+							<div
+								className="toggle_img_container"
+								onClick={this.handleToggleAll}
+							>
+								<img src="./angledown.png" alt="toggle_all" />
+							</div>
 							<input
 								type="text"
 								className="first_todo"

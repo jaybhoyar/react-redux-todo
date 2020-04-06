@@ -13,3 +13,6 @@ export let changeTabAction = (payload) => {
 export let clearCompletedAction = () => {
 	return { type: "CLEAR_COMPLETED" };
 };
+export let toggleAllAction = () => {
+	return { type: "TOGGLE_ALL" };
+};
