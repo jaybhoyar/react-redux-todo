@@ -10,3 +10,6 @@ export let toggleTodoAction = (payload) => {
 export let changeTabAction = (payload) => {
 	return { type: "CHANGE_TAB", payload };
 };
+export let clearCompletedAction = () => {
+	return { type: "CLEAR_COMPLETED" };
+};

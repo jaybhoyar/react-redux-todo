@@ -32,10 +32,17 @@ export default function Reducer(state = initialState, action) {
 				}),
 			};
 		}
+
 		case "CHANGE_TAB": {
 			return {
 				...state,
 				activeTab: action.payload,
+			};
+		}
+		case "CLEAR_COMPLETED": {
+			return {
+				...state,
+				todoList: state.todoList.filter((todo) => !todo.isDone),
 			};
 		}
 		default:

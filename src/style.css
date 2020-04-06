@@ -158,7 +158,6 @@ body {
 button {
 	background-color: none;
 	border: none;
-	font-weight: ;
 	color: #6d6d6dfb;
 	padding: 4px 8px;
 	font-size: 14px;
@@ -321,10 +320,10 @@ input[type="checkbox"] {
 .item_completed {
 	visibility: hidden;
 }
-.item_completed_1 {
+.item_completed_visible {
 	visibility: visible;
 }
-.item_completed_1:hover {
+.item_completed_visible:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }
