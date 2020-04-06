@@ -41,10 +41,10 @@ function mapStateToProps({ todoList, activeTab }) {
 		switch (tab) {
 			case "all":
 				return todos;
-			case "completed":
-				return todos.filter((t) => t.isDone);
 			case "active":
 				return todos.filter((t) => !t.isDone);
+			case "completed":
+				return todos.filter((t) => t.isDone);
 			default:
 				break;
 		}

@@ -39,7 +39,11 @@ class App extends Component {
 								value={this.state.todoInput}
 								onChange={this.handleAddTodo}
 								onKeyDown={(e) => {
-									if (e.keyCode === 13) this.addTodo();
+									if (
+										e.keyCode === 13 &&
+										this.state.todoInput.trim() !== ""
+									)
+										this.addTodo();
 								}}
 							/>
 						</div>

@@ -32,7 +32,12 @@ export default function Reducer(state = initialState, action) {
 				}),
 			};
 		}
-
+		case "CHANGE_TAB": {
+			return {
+				...state,
+				activeTab: action.payload,
+			};
+		}
 		default:
 			return state;
 	}

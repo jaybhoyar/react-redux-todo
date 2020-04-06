@@ -7,6 +7,6 @@ export let deleteTodoAction = (payload) => {
 export let toggleTodoAction = (payload) => {
 	return { type: "TOGGLE_TODO", payload };
 };
-// export let changeTabAction = (payload) => {
-// 	return { type: CHANGE_TAB, payload };
-// };
+export let changeTabAction = (payload) => {
+	return { type: "CHANGE_TAB", payload };
+};
